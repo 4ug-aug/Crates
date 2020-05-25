@@ -13,9 +13,12 @@
         </p>
         <p>{{ form.submit() }}</p>
     </form>
+    {% set total = [0] %}
     {% for post in posts %}
+    {% set _ = total.append(total.pop() + post.price) %}
     <p>
-    <a href="/delete/{{ post.id }}"><b>{{ post.body }} {{ post.id }}</b></a>
+    <a href="/delete/{{ post.id }}"><b>Item: {{ post.body }}, Price: {{ post.price }}</b></a>
     </p>
     {% endfor %}
+    <p>Size of Crate:{{ quantity }} , total price: {{ total[0] }}</p>
 {% endblock %}

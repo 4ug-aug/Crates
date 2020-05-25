@@ -17,7 +17,9 @@ def index():
         r = FetchItem()
         body=r.fetch(page)
         if body is not False:
-            post = Post(body=body, author=current_user)
+            body=r.fetch(page)['body']
+            price=r.fetch(page)['price']
+            post = Post(body=body, price=price, author=current_user)
             db.session.add(post)
             db.session.commit()
             flash('Added item!')
@@ -25,7 +27,8 @@ def index():
         else:
             flash('Invalid url!')
     posts = Post.query.filter_by(user_id=int(current_user.get_id()))
-    return render_template("index.html", title="Home", form=form, posts=posts)
+    quantity = posts.count()
+    return render_template("index.html", title="Home", form=form, posts=posts, quantity=quantity)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
