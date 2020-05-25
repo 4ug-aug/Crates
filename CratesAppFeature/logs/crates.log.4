@@ -1,0 +1,96 @@
+2020-05-25 21:13:35,548 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1211, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+TypeError: float() argument must be a string or a number, not 'Tag'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 24, in index
+    db.session.commit()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 1042, in commit
+    self.transaction.commit()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
+    self._prepare_impl()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2523, in flush
+    self._flush(objects)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2664, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.raise_(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2624, in _flush
+    flush_context.execute()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 586, in execute
+    persistence.save_obj(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\persistence.py", line 239, in save_obj
+    _emit_insert_statements(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\persistence.py", line 1135, in _emit_insert_statements
+    result = cached_connections[connection].execute(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1020, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1133, in _execute_clauseelement
+    ret = self._execute_context(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1213, in _execute_context
+    self._handle_dbapi_exception(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1517, in _handle_dbapi_exception
+    util.raise_(
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1211, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+sqlalchemy.exc.StatementError: (builtins.TypeError) float() argument must be a string or a number, not 'Tag'
+[SQL: INSERT INTO post (body, price, timestamp, user_id) VALUES (?, ?, ?, ?)]
+[parameters: [{'price': <div class="product-price-container">
+<span>2 999</span></div>, 'user_id': 6, 'body': 'Acer Aspire 3 ED014 15,6" bærbar computer (sort)'}]]
+2020-05-25 21:14:25,508 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-05-25 21:14:28,663 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 18, in index
+    body=r.fetch(page)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\urlParse.py", line 44, in fetch
+    price = soup.find("div", {"class": "product-price-container"}).strip()
+TypeError: 'NoneType' object is not callable
+2020-05-25 21:15:23,461 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]

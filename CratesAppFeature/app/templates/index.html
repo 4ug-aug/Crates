@@ -1,24 +1,18 @@
 {% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
 
-{% block content %}
+{% block app_content %}
     <h1>Hi, {{ current_user.username }}!</h1>
-    <form action="" method="post">
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.post.label }}<br>
-            {{ form.post(cols=32, rows=4) }}<br>
-            {% for error in form.post.errors %}
-            <span style="color: red;">[{{ error }}]</span>
-            {% endfor %}
-        </p>
-        <p>{{ form.submit() }}</p>
-    </form>
+    {% if form %}
+    {{ wtf.quick_form(form) }}
+    <br>
+    {% endif %}
     {% set total = [0] %}
     {% for post in posts %}
-    {% set _ = total.append(total.pop() + post.price) %}
-    <p>
-    <a href="/delete/{{ post.id }}"><b>Item: {{ post.body }}, Price: {{ post.price }}</b></a>
-    </p>
+        {% set _ = total.append(total.pop() + post.price) %}
+        <p>
+        <a href="/delete/{{ post.id }}"><b>Item: {{ post.body }}, Price: {{ post.price }}</b></a>
+        </p>
     {% endfor %}
-    <p>Size of Crate:{{ quantity }} , total price: {{ total[0] }}</p>
+    <p><b>Size of Crate:{{ quantity }} , total price: {{ total[0] }} </b></p>
 {% endblock %}

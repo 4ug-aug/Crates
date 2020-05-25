@@ -29,5 +29,5 @@ class RegistrationForm(FlaskForm):
 
 class PostForm(FlaskForm):
     post = TextAreaField('Insert Url', validators=[
-        DataRequired(), Length(min=1, max=140)])
+        DataRequired(), Length(min=1, max=1400)])
     submit = SubmitField('Submit')
