@@ -14,9 +14,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ url_for('index') }}">Crates</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <a class="navbar-brand" href="/home">
+                <img src="{{url_for('static', filename='Crates-logo.jpg', width=100, heigh=100)}}" style="width: 50px" />
+            </a>
             <ul class="nav navbar-nav">
                 <li><a href="/home">Home</a></li>
             </ul>

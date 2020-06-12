@@ -4,6 +4,8 @@ from app.forms import LoginForm, RegistrationForm, PostForm
 from app.models import User, Post
 from flask_login import current_user, login_user, logout_user, login_required
 from app.urlParse import FetchItem
+import urllib
+import os
 
 # @login_required
 
@@ -19,7 +21,8 @@ def index():
         if body is not False:
             body=r.fetch(page)['body']
             price=r.fetch(page)['price']
-            post = Post(body=body, price=price, author=current_user)
+            image=r.fetch(page)['image']
+            post = Post(body=body, price=price, author=current_user, image=image)
             db.session.add(post)
             db.session.commit()
             flash('Added item!')
@@ -63,10 +66,14 @@ def register():
         return redirect('/login')
     return render_template('register.html', title='Register', form=form)
 
-@app.route('/delete/<post_id>')
+@app.route('/delete/<post_id>/<image_id>')
 @login_required
-def delete(post_id):
+def delete(post_id, image_id):
     post = Post.query.get(post_id)
+    try:
+        os.remove('app\static\\matas\\'+str(image_id)+'.jpg')
+    except FileNotFoundError:
+        flash('Error deleting')
     db.session.delete(post)
     db.session.commit()
     return redirect('/home')

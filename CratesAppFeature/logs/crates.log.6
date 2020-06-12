@@ -1,13 +1,4 @@
-2020-05-25 20:44:47,458 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1211, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-ValueError: could not convert string to float: '\n2\xa0999'
-
-The above exception was the direct cause of the following exception:
-
+2020-06-08 19:57:39,396 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,51 +14,86 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 24, in index
-    db.session.commit()
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
-    return getattr(self.registry(), name)(*args, **kwargs)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 1042, in commit
-    self.transaction.commit()
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
-    self._prepare_impl()
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
-    self.session.flush()
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2523, in flush
-    self._flush(objects)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2664, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
-    compat.raise_(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
-    raise exception
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\session.py", line 2624, in _flush
-    flush_context.execute()
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
-    rec.execute(self)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 586, in execute
-    persistence.save_obj(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\persistence.py", line 239, in save_obj
-    _emit_insert_statements(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\persistence.py", line 1135, in _emit_insert_statements
-    result = cached_connections[connection].execute(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1020, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1133, in _execute_clauseelement
-    ret = self._execute_context(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1213, in _execute_context
-    self._handle_dbapi_exception(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1517, in _handle_dbapi_exception
-    util.raise_(
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
-    raise exception
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1211, in _execute_context
-    context = constructor(dialect, self, conn, *args)
-  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
-    param.append(processors[key](compiled_params[key]))
-sqlalchemy.exc.StatementError: (builtins.ValueError) could not convert string to float: '\n2\xa0999'
-[SQL: INSERT INTO post (body, price, timestamp, user_id) VALUES (?, ?, ?, ?)]
-[parameters: [{'body': 'Acer Aspire 3 ED014 15,6" bærbar computer (sort)', 'price': '\n2\xa0999', 'user_id': 6}]]
-2020-05-25 21:11:42,898 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 20, in index
+    body=r.fetch(page)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\urlParse.py", line 49, in fetch
+    urllib.request.urlretrieve(image_path, fullfilename+'.jpg')
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 245, in urlretrieve
+    url_type, path = _splittype(url)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\parse.py", line 1008, in _splittype
+    match = _typeprog.match(url)
+TypeError: expected string or bytes-like object
+2020-06-08 20:01:27,118 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:01:33,186 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 20, in index
+    body=r.fetch(page)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\urlParse.py", line 49, in fetch
+    urllib.request.urlretrieve(image_path, fullfilename+'.jpg')
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 247, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 509, in open
+    req = Request(fullurl, data)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 328, in __init__
+    self.full_url = url
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 354, in full_url
+    self._parse()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 383, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: '/img/p/2400/1139852.jpg'
+2020-06-08 20:02:17,482 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:02:21,957 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 20, in index
+    body=r.fetch(page)
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\urlParse.py", line 49, in fetch
+    urllib.request.urlretrieve(image_path, fullfilename+'.jpg')
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 247, in urlretrieve
+    with contextlib.closing(urlopen(url, data)) as fp:
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 222, in urlopen
+    return opener.open(url, data, timeout)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 509, in open
+    req = Request(fullurl, data)
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 328, in __init__
+    self.full_url = url
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 354, in full_url
+    self._parse()
+  File "c:\users\augus\appdata\local\programs\python\python38-32\lib\urllib\request.py", line 383, in _parse
+    raise ValueError("unknown url type: %r" % self.full_url)
+ValueError: unknown url type: 'komplett.dk/img/p/2400/1139852.jpg'
+2020-06-08 20:02:34,561 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:04:31,015 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:06:01,257 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:07:05,593 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:07:30,853 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+2020-06-08 20:11:53,224 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]

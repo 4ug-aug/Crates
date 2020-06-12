@@ -1,10 +1,10 @@
-2020-05-25 21:21:27,138 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
+2020-06-08 20:26:20,793 ERROR: Exception on /home [POST] [in c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\base.py", line 1211, in _execute_context
     context = constructor(dialect, self, conn, *args)
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
     param.append(processors[key](compiled_params[key]))
-ValueError: could not convert string to float: '2 999'
+ValueError: could not convert string to float: '662.00kr'
 
 The above exception was the direct cause of the following exception:
 
@@ -23,7 +23,7 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 24, in index
+  File "C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\routes.py", line 27, in index
     db.session.commit()
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
     return getattr(self.registry(), name)(*args, **kwargs)
@@ -67,7 +67,7 @@ Traceback (most recent call last):
     context = constructor(dialect, self, conn, *args)
   File "c:\users\augus\appdata\local\programs\python\python38-32\lib\site-packages\sqlalchemy\engine\default.py", line 836, in _init_compiled
     param.append(processors[key](compiled_params[key]))
-sqlalchemy.exc.StatementError: (builtins.ValueError) could not convert string to float: '2 999'
-[SQL: INSERT INTO post (body, price, timestamp, user_id) VALUES (?, ?, ?, ?)]
-[parameters: [{'user_id': 6, 'price': '2 999', 'body': 'Acer Aspire 3 ED014 15,6" bærbar computer (sort)'}]]
-2020-05-25 21:21:49,530 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]
+sqlalchemy.exc.StatementError: (builtins.ValueError) could not convert string to float: '662.00kr'
+[SQL: INSERT INTO post (body, price, timestamp, user_id, image) VALUES (?, ?, ?, ?, ?)]
+[parameters: [{'price': '662.00kr', 'image': '8cef6b54-a9b5-11ea-8d5e-01198600a73f', 'user_id': 1, 'body': 'GEL-1090 - Sneakers'}]]
+2020-06-08 20:26:31,163 INFO: Crates startup [in C:\Users\augus\OneDrive\Skrivebord\CratesAppFeature\app\__init__.py:30]

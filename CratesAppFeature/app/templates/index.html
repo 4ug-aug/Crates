@@ -11,8 +11,8 @@
     {% for post in posts %}
         {% set _ = total.append(total.pop() + post.price) %}
         <p>
-        <a href="/delete/{{ post.id }}"><b>Item: {{ post.body }}, Price: {{ post.price }}</b></a>
+        <h4><img src="/static/{{ post.image }}.jpg" width="150px"/><b>Item: {{ post.body }}, Price: {{ post.price }}               </b><a href="/delete/{{ post.id }}/{{ post.image }} " class="btn btn-danger">Delete</a></h4>
         </p>
     {% endfor %}
-    <p><b>Size of Crate:{{ quantity }} , total price: {{ total[0] }} </b></p>
+    <h3><b>Size of Crate:{{ quantity }} , total price: {{ total[0] }} kr </b></h3>
 {% endblock %}
